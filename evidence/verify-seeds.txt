@@ -1,0 +1,4 @@
+F_23^2: four skew blocks, 529 correlation checks passed
+2120 matrix: diagonal +1, skew off the diagonal, every row-pair distance 1060
+F_263^2: four skew blocks, 17 correlation checks passed
+rebuilt matrix equals data/order-2120.signs.gz after decompression

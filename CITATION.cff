@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: "Please cite Version 0.1.0 of this research repository."
+title: "A skew Hadamard matrix of order 2120"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Kline
+    given-names: Jeffery
+repository-code: "https://github.com/jeff-kline/skew-hadamard-2120"
+url: "https://github.com/jeff-kline/skew-hadamard-2120"
+license: GPL-3.0-only
+abstract: >-
+  A paper and release repository giving a skew Hadamard matrix of order
+  2120 = 2^3 * 265. No earlier published construction at this order was
+  found in the sources checked; Cati and Pasechnik record 4240 as the least
+  known skew order with odd part 265, and the 2025 census of Dokovic and
+  Seberry lists order 1060 as undecided. The matrix comes from four sign
+  patterns on the field with 529 elements, fixed by eight signs on the
+  projective line over F_23, whose Fourier energies sum to a constant; eight
+  integer character sums certify the construction, and a bordered
+  Goethals-Seidel array gives the matrix. A vector form of Turyn's cyclic
+  expansion carries such seeds to every odd power, giving skew Hadamard
+  matrices of order 4(p^(2n)+1) for p = 7, 23, 263 and every odd n. Four is
+  the least number of blocks for an all-skew family on these groups. The
+  archived matrix is checked exactly. Novelty is bounded to the sources
+  searched.
+keywords:
+  - Hadamard matrices
+  - skew Hadamard matrices
+  - supplementary difference sets
+  - Gauss sums
+  - Goethals-Seidel array
+  - Turyn cyclic expansion
+references:
+  - type: article
+    title: "A database of constructions of Hadamard matrices"
+    authors:
+      - family-names: Cati
+        given-names: Matteo
+      - family-names: Pasechnik
+        given-names: Dmitrii V.
+    year: 2024
+    url: "https://arxiv.org/abs/2411.18897"
+  - type: article
+    title: "Skew Hadamard difference families and skew Hadamard matrices"
+    authors:
+      - family-names: Momihara
+        given-names: Koji
+      - family-names: Xiang
+        given-names: Qing
+    year: 2018
+    url: "https://arxiv.org/abs/1801.08776"
+  - type: article
+    title: "On C-matrices of arbitrary powers"
+    authors:
+      - family-names: Turyn
+        given-names: Richard J.
+    journal: "Canadian Journal of Mathematics"
+    volume: 23
+    year: 1971
+    doi: 10.4153/CJM-1971-056-0

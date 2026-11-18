@@ -1,0 +1,13 @@
+p=23: z^24 = 5 + 0 i, eta = -1
+p=23: lines represented by z^0..z^p: yes
+p=23: d = (9, 7, 3, 3, 1, -3, -1, 5)
+p=23: even sum 92, odd sum 92, 4p = 92 -> PASS
+p=263: z^264 = 5 + 0 i, eta = -1
+p=263: lines represented by z^0..z^p: yes
+p=263: d = (1, -29, -9, -11, -3, 9, 31, -3)
+p=263: even sum 1052, odd sum 1052, 4p = 1052 -> PASS
+control (p=23, all h=+1):
+p=23: z^24 = 5 + 0 i, eta = -1
+p=23: lines represented by z^0..z^p: yes
+p=23: d = (7, 9, 3, 5, 3, 3, 1, -1)
+p=23: even sum 68, odd sum 116, 4p = 92 -> FAIL

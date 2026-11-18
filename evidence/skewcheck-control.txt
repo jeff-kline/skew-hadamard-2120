@@ -1,0 +1,2 @@
+N=2120 rows_read=2120 pairs_checked=2246140 nonorthogonal_pairs=2119 diagonal_not_plus=0 skew_violations=1
+RESULT: FAIL
