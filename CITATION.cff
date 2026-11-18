@@ -20,8 +20,10 @@ abstract: >-
   integer character sums certify the construction, and a bordered
   Goethals-Seidel array gives the matrix. A vector form of Turyn's cyclic
   expansion carries such seeds to every odd power, giving skew Hadamard
-  matrices of order 4(p^(2n)+1) for p = 7, 23, 263 and every odd n. Four is
-  the least number of blocks for an all-skew family on these groups. The
+  matrices of order 4(p^(2n)+1) for p = 7, 23, 263 and every odd n; the seed
+  at p = 263 rests on a machine computation, and no priority is claimed for
+  orders beyond 2120. Four is the least number of blocks for an all-skew
+  family on these groups. Order 1060 remains open. The
   archived matrix is checked exactly. Novelty is bounded to the sources
   searched.
 keywords:

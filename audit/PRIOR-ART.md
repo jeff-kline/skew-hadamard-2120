@@ -45,9 +45,9 @@ These checks are by hand, from Koukouvinos–Stylianou (2008) unless stated.
 
 ## Credit
 
-- **Turyn (1971)** and **Momihara (2020)**: the cyclic matching expansion. The paper's Theorem 5 is its vector version.
+- **Turyn (1971)** and **Momihara (2020)**: the cyclic matching expansion. The paper's Theorem 3 is its vector version.
 - **Wallis–Whiteman** and **Momihara–Xiang**: bordered arrays; the array in Lemma 2 is a bordered Goethals–Seidel variant.
-- **Lehmer (1976)**: a doubling-and-parity argument for unions of cyclotomic classes modulo a prime, close in method to Theorem 7.
+- **Lehmer (1976)**: a doubling-and-parity argument for unions of cyclotomic classes modulo a prime, close in method to Theorem 5.
 - **Orrick (2008)**: the binary code and four-row products used in the inequivalence remark.
 - **The author's own July 2026 search** (unpublished) first found the four masks over $\mathbb F_{529}$; it did not build the matrix.
 

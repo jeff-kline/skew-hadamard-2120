@@ -65,3 +65,80 @@ The agent read the full note.
   - A5 (gap): the class-count claim had no proof in the note. Disposition: withdrawn; the paper states only the $2^{L_n}$ distinct masks.
   - A6 (documentation): the matrix check rested on a recorded run with no source. Disposition: `code/skewcheck.c` added. Under `make verify` it passes on the archived file, and a one-entry negative control fails.
   - A7 (gap, source): Koukouvinos–Stylianou Theorem 13 was not openly accessible to the auditor. Disposition: the author supplied the full text. Theorem 13 gives a skew matrix of order $mh$ from amicable matrices of order $m$ and a skew matrix of order $h$. No construction in that survey reaches 2120 or 1060 (audit/PRIOR-ART.md).
+
+**Numbering note (2026-11-18).** The two entries above use the draft's
+theorem numbers. The compiled paper numbers theorems, lemmas and corollaries
+on one counter: Theorem 3 is the expansion (draft "Theorem 5"), Corollary 4
+the orders ("Corollary 6") and Theorem 5 the minimum ("Theorem 7").
+
+## 2026-11-18 — release audits of the draft commit 3abbb4e
+
+Four process-separated agents worked in fresh contexts, all read-only: claims
+consistency (Sonnet), end-to-end proof (Fable, hand arithmetic only),
+citations (Sonnet), and reproducibility (Sonnet; it ran only `make verify` and
+`make paper` on a clean `git archive`).
+
+### Reproducibility
+
+- **Verdict:** PASS. Five MATCH lines; the rebuilt PDF hash equals the pinned one.
+- **Optional findings, all adopted:**
+  - R-O1 (documentation): the PDF hash depends on the TeX version. Stated in VERIFICATION.md.
+  - R-O2 (documentation): `shasum` may be missing on minimal Linux. Fallback to `sha256sum` added.
+  - R-O3 (documentation): `skewcheck.c` needs gcc or clang. Stated in the README.
+
+### Claims consistency
+
+- **Verdict:** PARTIAL.
+- **Must-fix findings and dispositions:**
+  - C-M1 (error): the README, ADMISSION, PRIOR-ART and this ledger cited "Theorem 5, Corollary 6, Theorem 7". The compiled numbers are Theorem 3, Corollary 4 and Theorem 5. Fixed in all living files; numbering note added above.
+  - C-M2 (gap): the $p=263$ machine-dependence caveat was missing from the README "What is new", ADMISSION, CITATION.cff and Corollary 4. Fixed.
+  - C-M3 (documentation): process-history phrases in the paper. Fixed:
+    - "found earlier in the same project" removed with the new $p=7$ paragraph;
+    - "This note" changed to "This paper";
+    - the search sentence reworded.
+    - The July 2026 provenance sentence is kept, as credit to the author's own earlier search.
+  - C-M4 (sharpening): terms used before definition. Fixed:
+    - "seed" is defined at first use in the README and the paper's introduction;
+    - "Paley I" is defined;
+    - "index 16" is explained in both places it occurs.
+- **Optional findings and dispositions:**
+  - "They lie far outside the published tables" is replaced by "we have not compared them with every published construction".
+  - The README residuals now list all three.
+  - The README item on odd powers says no priority is claimed beyond 2120.
+  - The CITATION.cff abstract gives the limits.
+  - The `seed-sums.c` comment says "paper".
+  - The CITATION.cff `message` is kept, as in the predecessor's candidate.
+
+### Citations
+
+- **Verdict:** PARTIAL, with no wrong citation. Confirmed against the sources:
+  - Cati–Pasechnik Table 5 265(4);
+  - Momihara–Xiang Theorem 1.5, Proposition 1.4 ($q\equiv9\pmod{16}$), Propositions 1.1 and 1.3, Corollaries 1.6–1.7;
+  - Seberry–Yamada Lemma 2.4 (p. 443);
+  - Koukouvinos–Stylianou Theorem 13 and Corollary 1;
+  - the bibliographic data of Turyn, Blatt–Szekeres, Momihara, Lehmer and Orrick;
+  - census $v=265$ undecided.
+- **Dispositions:**
+  - the Momihara reference now uses DOI 10.37236/9058;
+  - a Wallis–Whiteman entry was added (Bull. Austral. Math. Soc. 7 (1972), 233–249, checked on the publisher page);
+  - the census keeps its PDF date and retrieval date.
+- **Not checked by this lane, and how they are covered:**
+  - the census URL itself (read by the author's session on 2026-11-18);
+  - Orrick's journal pagination (secondary sources agree);
+  - the end page of the Seberry–Yamada chapter.
+
+### End-to-end proof
+
+- **Verdict:** VERIFIED for Lemma 2, Section 3, the $p=23$ certificate (all 24 powers recomputed), the $p=7$ paragraph, Theorem 3, Theorem 5 and the inequivalence remark.
+- **Must-fix findings and dispositions:**
+  - P-M1 (gap): the paper never connected Theorem 5 (skew sets) to seeds (masks). Fixed: a paragraph after the proof shows $|\widehat{\mathbf 1_{B_i}}|^2=(1+|\widehat{g_i}|^2)/4$, so constant energy is equivalent to constant difference multiplicity.
+  - P-M2 (documentation): $z$ meant both $1+2i$ and a slope in the $p=7$ paragraph. Fixed by the $p=7$ change below. The $n=3$ example now uses $x_1,x_2,x_3$.
+  - P-M3 (documentation): the trace-zero assertion for the Agayan–Sarukhanyan array had no justification. Fixed with a one-line reason: corresponding diagonal entries of the two diagonal blocks are negatives.
+  - P-M4 (documentation): the self-orthogonality of the code was attributed to Orrick without a check. Fixed: a short proof is now in the remark, with Orrick kept as "compare".
+- **Optional findings and dispositions:**
+  - P-O1 (sharpening): $p=7$ satisfies (L) and the Section 3 rule. The auditor found $h=(+,+,-,-,+,-,-,+)$ by hand, with $d=(5,1,-1,3,1,-3,1,3)$. Confirmed by `code/seed-sums.c`, now extended to $p=7$, and by hand by the root agent (real parts $1,1,4,3,0,6,5,1$; $z^8=5$). Adopted: the paper's $p=7$ seed is now this one, and the separate projective construction is dropped. The abstract's "the same method works in characteristics 7 and 263" is now literal.
+  - Corollary 4 has a proof line and the machine caveat.
+  - Notation: the quadratic character in Section 4 is now $\chi$, and the sets in Theorem 5 are $B_i$.
+  - Section 4 notes that unpaired factors vanish at the principal character.
+  - "Listed in a table" became "listed in Section 3".
+  - Wallis–Whiteman added to the bibliography.

@@ -29,7 +29,7 @@ running time is about two seconds.
 |---|---|---|
 | Theorem 1: the archived matrix is skew Hadamard. All 2,246,140 row pairs have Hamming distance 1060, the diagonal is $+1$, and opposite entries are negatives | `skewcheck.c`, reading `data/order-2120.signs.gz` | `skewcheck.txt` |
 | Negative control: one flipped entry is detected | `skewcheck.c` on a modified copy | `skewcheck-control.txt` |
-| Section 3: hypothesis (L) and the eight sums $d_c$ at $p=23$ and $p=263$; a sign choice that fails | `seed-sums.c` | `seed-sums.txt` |
+| Section 3: hypothesis (L) and the eight sums $d_c$ at $p=7$, $23$ and $263$; a sign choice that fails | `seed-sums.c` | `seed-sums.txt` |
 | Section 3, independently: the aggregate autocorrelation is $-4$ at every nonzero shift (all 528 at $p=23$; one per class of index 16 at $p=263$). The matrix is rebuilt from the seed and the array of Lemma 2, checked, and compared with the archived file | `verify-square-field-seeds.mjs --matrix` | `verify-seeds.txt` |
 | Order arithmetic: $199$, $470599$ and $1129900999$ are primes $\equiv3\pmod4$; $2119=13\cdot163$; $1059=3\cdot353$; $4(23^6+1)=592143560$ | `paley-primes.c` | `paley-primes.txt` |
 
@@ -49,9 +49,12 @@ fc6dbe5174b916fd413202c421d06ab6a6231d7d44368451ba955fc439006899
 ## Paper build
 
 `make paper` runs pdfLaTeX three times with a fixed `SOURCE_DATE_EPOCH` and
-fails on any warning, overfull box or undefined reference. The release PDF
-`paper/main.pdf` has SHA-256
+fails on any warning, overfull box or undefined reference. With the pdfTeX
+version listed above, the release PDF `paper/main.pdf` has SHA-256
 
 ```text
-61a35a207f26b684b45cbfc91e840f697ef6242a5d8e75db9121d8250d96c160
+6f4d993b273c5aaada03b9a1fda59e7aa75840a68bbbaad08b27e4d77e7340d9
 ```
+
+Other TeX distributions embed different font and metadata bytes, so a
+different PDF hash there is expected and is not a failure.

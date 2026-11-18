@@ -1,4 +1,4 @@
-/* Recompute the eight line sums d_0..d_7 of the note's Section 3 for p = 23 and p = 263,
+/* Recompute the eight line sums d_0..d_7 of the paper's Section 3 for p = 7, p = 23 and p = 263,
    and check hypothesis (L): z = 1+2i has order p+1 in (K-units mod F_p-units) and z^{p+1} = 5 is a nonsquare.
    Integer arithmetic only. Independent of verify-square-field-seeds.mjs. */
 #include <stdio.h>
@@ -34,9 +34,10 @@ static void run(long p, const int h[8]) {
          (se == 4 * p && so == 4 * p) ? "PASS" : "FAIL");
 }
 int main(void) {
+  const int h7[8]   = {1, 1, -1, -1, 1, -1, -1, 1};
   const int h23[8]  = {1, 1, -1, 1, 1, 1, 1, 1};
   const int h263[8] = {1, -1, -1, 1, 1, 1, 1, 1};
-  run(23, h23); run(263, h263);
+  run(7, h7); run(23, h23); run(263, h263);
   const int bad[8] = {1, 1, 1, 1, 1, 1, 1, 1};
   printf("control (p=23, all h=+1):\n"); run(23, bad);
   return 0;
