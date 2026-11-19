@@ -5,7 +5,7 @@ PDFLATEX ?= pdflatex
 export SOURCE_DATE_EPOCH := 1794960000
 export FORCE_SOURCE_DATE := 1
 
-.PHONY: paper verify
+.PHONY: paper verify figure
 
 # Three passes from a clean extraction; no inherited auxiliaries are required.
 paper:
@@ -14,6 +14,10 @@ paper:
 	cd paper && $(PDFLATEX) -interaction=nonstopmode -halt-on-error main.tex >/dev/null
 	@! grep -E 'Warning:|Overfull|undefined references|undefined citations' paper/main.log
 	@echo "paper built: paper/main.pdf"
+
+# Regenerate figures/order-2120.png from the archived matrix (Node.js).
+figure:
+	$(NODE) code/render-matrix.mjs data/order-2120.signs.gz figures/order-2120.png
 
 # Run every certificate (about two seconds on one core) and compare each
 # output with the pinned copy in evidence/.

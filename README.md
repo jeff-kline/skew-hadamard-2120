@@ -10,6 +10,14 @@ The paper is [paper/main.pdf](paper/main.pdf); its source is
 [paper/main.tex](paper/main.tex). The matrix is
 [data/order-2120.signs.gz](data/order-2120.signs.gz).
 
+![The skew Hadamard matrix of order 2120, one pixel per entry](figures/order-2120.png)
+
+The matrix, one pixel per entry: white is +1 and black is −1. Thin red gaps
+separate the four border rows and columns and the four copies of the field
+with 529 elements. The four diagonal blocks are the same pattern; the others
+are its reflections, whose stripes run the other way. Figure 1 of the paper
+shows the layout as a schematic (Lemma 2).
+
 ## Introduction
 
 A Hadamard matrix $H$ of order $N$ is skew if $H+H^{\mathsf T}=2I$. Skew

@@ -53,8 +53,23 @@ fails on any warning, overfull box or undefined reference. With the pdfTeX
 version listed above, the release PDF `paper/main.pdf` has SHA-256
 
 ```text
-6f4d993b273c5aaada03b9a1fda59e7aa75840a68bbbaad08b27e4d77e7340d9
+943a6f869e942c37f575e0e167ae52964b5624aa5d60b1fce9b325dddf8b1d98
 ```
 
 Other TeX distributions embed different font and metadata bytes, so a
 different PDF hash there is expected and is not a failure.
+## Figure
+
+`make figure NODE=/path/to/node` regenerates `figures/order-2120.png` from
+the archived matrix with [code/render-matrix.mjs](code/render-matrix.mjs). It
+writes one pixel per entry (white $+1$, black $-1$) and inserts red gaps
+between the border and the four field copies; no entry is drawn over. With
+Node.js v22.11.0 the output is byte-identical to the committed figure,
+SHA-256
+
+```text
+c263470e02b3bff262f2ca0f413bf43bc7fa5efbc837fccd17575a3d67fcddd2
+```
+
+Another zlib version may compress differently; the decoded pixels are the
+same.

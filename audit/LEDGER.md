@@ -142,3 +142,25 @@ citations (Sonnet), and reproducibility (Sonnet; it ran only `make verify` and
   - Section 4 notes that unpaired factors vanish at the principal character.
   - "Listed in a table" became "listed in Section 3".
   - Wallis–Whiteman added to the bibliography.
+
+## 2026-11-18 — figure added at the author's request (before the tag)
+
+- **Change:** `figures/order-2120.png` is rendered from the archived matrix by
+  the new `code/render-matrix.mjs` (pure Node.js; one pixel per entry, red gaps
+  between blocks, no entry drawn over). It is shown in the README and as
+  Figure 1 of the paper, with a caption naming the blocks of Lemma 2. A
+  `make figure` target and a VERIFICATION.md section with the figure's hash
+  were added.
+- **Check:** the figure is byte-identical on regeneration. Before rendering,
+  the author's session also re-checked $HH^{\mathsf T}=2120I$ and
+  $H+H^{\mathsf T}=2I$ from the archived file. No claim changed; the paper
+  text changed only by the figure, its caption and one sentence pointing to
+  it.
+- **Revision (same day, author's review):** the full rendering doubled the PDF
+  (270 KB to 543 KB) and added little to the paper. Figure 1 of the paper is now a
+  TikZ schematic of the bordered array: corner, borders, the $4\times4$ block
+  grid with labels and dimensions, and a caption showing why $H+H^{\mathsf T}=2I$
+  (corner and diagonal blocks satisfy $X+X^{\mathsf T}=2I$; the left border is
+  the negative transpose of the top border; mirror blocks are negative
+  transposes because $D_i$ and $T_i$ are symmetric). The full rendering is kept
+  in the README only. PDF size is now 281 KB.
