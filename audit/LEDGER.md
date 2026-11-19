@@ -164,3 +164,19 @@ citations (Sonnet), and reproducibility (Sonnet; it ran only `make verify` and
   the negative transpose of the top border; mirror blocks are negative
   transposes because $D_i$ and $T_i$ are symmetric). The full rendering is kept
   in the README only. PDF size is now 281 KB.
+
+## 2026-11-18 — tag, archive and admission
+
+- Tag `v0.1.0` (object `64e2d55`) → `29a928f`; the tagged-state audit passed
+  8 of 8. The GitHub Release was published at 2026-11-19 00:12 UTC.
+- Zenodo record 24356140 (version DOI 10.5281/zenodo.24356140, concept DOI
+  10.5281/zenodo.24356139). The Zenodo file is byte-identical to the GitHub
+  zipball pinned before the Release (SHA-256 `c6cc7730…2c70`); the
+  archived-state audit passed 11 of 11.
+- Living metadata: README status paragraph and DOI badge, `CITATION.cff` DOI,
+  identifiers and `date-released`, the paper's DOI line, ADMISSION ADMITTED and
+  the CORRECTIONS version history. The tagged snapshot keeps its
+  prepublication wording.
+- P1 residual (two dicyclic relative-difference-set papers in preview only;
+  citations of Momihara–Xiang not screened) was stated to the author before the
+  freeze, and the author approved the freeze and the admission with it.
